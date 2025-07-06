@@ -1,18 +1,22 @@
+local opt = vim.opt
+local g = vim.g
+local cmd = vim.cmd
+
 local M = {}
 
 function M.load()
   local lush = require("lush")
-  local theme = require("themes.slipknot")
+  local theme = require("lush_themes.knot")
 
-  vim.opt.background = 'dark'
-  vim.g.colors_name = 'slipknot'
-  package.loaded['themes.slipknot'] = nil
+  opt.background = 'dark'
+  g.colors_name = 'knot'
+  package.loaded['lush_themes.knot'] = nil
 
   lush(theme.theme)
 end
 
 function M.setup()
-  vim.cmd("color knot")
+  cmd("color knot")
 end
 
 return M
