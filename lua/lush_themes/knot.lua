@@ -14,7 +14,7 @@ M.palette = {
 }
 M.colors = {
   -- Editor
-  bg = M.palette.black,
+  bg = M.palette.black.da(70),
   bg_light = M.palette.black.li(2),
   bg_dark = M.palette.black.da(70),
   fg = M.palette.gray,
@@ -101,6 +101,10 @@ M.theme = lush(function(injected_functions)
     Added { fg = M.colors.diff_add_fg, bg = M.colors.diff_add_bg },
     Removed { fg = M.colors.diff_delete_fg, bg = M.colors.diff_delete_bg },
     Changed { fg = M.colors.diff_change_fg, bg = M.colors.diff_change_bg },
+    WinBar { bg = M.colors.bg_dark, fg = M.colors.fg },
+    WinBarNC { bg = M.colors.bg_dark, fg = M.colors.fg },
+    Tabline { bg = M.colors.bg_dark, fg = M.colors.fg },
+    TablineSel { bg = M.colors.bg_dark, fg = M.palette.white, bold = true },
 
     -- Types
     Type { fg = M.colors.keyword },
