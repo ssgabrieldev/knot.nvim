@@ -15,7 +15,7 @@ M.palette = {
 M.colors = {
   -- Editor
   bg = M.palette.black.da(70),
-  bg_light = M.palette.black.li(2),
+  bg_light = M.palette.black.li(5),
   bg_dark = M.palette.black.da(70),
   fg = M.palette.gray,
   fg_dark = M.palette.gray.da(30),
@@ -39,7 +39,7 @@ M.colors.diagnostic_hint_fg = M.palette.blue
 M.colors.diagnostic_hint_bg = M.colors.diagnostic_hint_fg.da(80)
 
 -- FloatBorder
-M.colors.border_fg = M.colors.bg
+M.colors.border_fg = M.colors.bg_light
 M.colors.border_bg = M.colors.bg_dark
 
 -- BufferLine
