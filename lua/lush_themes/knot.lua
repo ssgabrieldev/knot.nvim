@@ -4,7 +4,7 @@ local hsl = lush.hsl
 local M = {}
 
 M.palette = {
-  black = hsl("#080808"),
+  black = hsl("#030303"),
   red = hsl("#910c1a"),
   white = hsl("#F3F1EE"),
   gray = hsl("#5B5B5B"),
@@ -14,9 +14,8 @@ M.palette = {
 }
 M.colors = {
   -- Editor
-  bg = M.palette.black.da(70),
+  bg = M.palette.black,
   bg_light = M.palette.black.li(5),
-  bg_dark = M.palette.black.da(70),
   fg = M.palette.gray,
   fg_dark = M.palette.gray.da(30),
   keyword = M.palette.red,
@@ -38,15 +37,15 @@ M.colors.diagnostic_error_bg = M.colors.diagnostic_error_fg.da(80)
 M.colors.diagnostic_hint_fg = M.palette.blue
 M.colors.diagnostic_hint_bg = M.colors.diagnostic_hint_fg.da(80)
 
--- FloatBorder
+-- Border
 M.colors.border_fg = M.colors.bg_light
-M.colors.border_bg = M.colors.bg_dark
+M.colors.border_bg = M.colors.bg
 
 -- BufferLine
 M.colors.buffer_selected = M.palette.white
 
 -- Lualine
-M.colors.lualine_normal_bg = M.colors.bg_dark
+M.colors.lualine_normal_bg = M.colors.bg
 M.colors.lualine_normal_fg = M.palette.red
 M.colors.lualine_insert_bg = M.palette.red
 M.colors.lualine_insert_fg = M.colors.bg_light
@@ -58,7 +57,7 @@ M.colors.lualine_replace_bg = M.palette.yellow
 M.colors.lualine_replace_fg = M.colors.bg_light
 M.colors.lualine_command_bg = M.palette.blue
 M.colors.lualine_command_fg = M.colors.bg_light
-M.colors.lualine_inactive_bg = M.colors.bg_dark
+M.colors.lualine_inactive_bg = M.colors.bg
 M.colors.lualine_inactive_fg = M.palette.white
 
 -- NvimTree
@@ -74,7 +73,7 @@ M.colors.diff_delete_bg = M.palette.red.da(diff_da)
 M.colors.diff_change_bg = M.palette.blue.da(diff_da)
 
 -- Markdown
-M.colors.markdown_code_block_bg = M.colors.bg_dark
+M.colors.markdown_code_block_bg = M.colors.bg
 
 -- Dap
 M.colors.dap_stopped_line_bg = M.palette.red.da(60)
@@ -90,7 +89,7 @@ M.theme = lush(function(injected_functions)
     Visual { fg = M.colors.bg, bg = M.colors.fg },
     CursorLine { bg = M.colors.bg_light },
     Directory { fg = M.colors.folder_name },
-    NormalFloat { fg = M.colors.fg, bg = M.colors.bg_dark }, -- Normal text in floating windows.
+    NormalFloat { fg = M.colors.fg, bg = M.colors.bg }, -- Normal text in floating windows.
     FloatBorder { fg = M.colors.border_fg, bg = M.colors.border_bg },
     WinSeparator { bg = M.colors.border_bg, fg = M.colors.border_fg },
     StatusLine { bg = M.colors.lualine_inactive_bg },
@@ -101,10 +100,8 @@ M.theme = lush(function(injected_functions)
     Added { fg = M.colors.diff_add_fg, bg = M.colors.diff_add_bg },
     Removed { fg = M.colors.diff_delete_fg, bg = M.colors.diff_delete_bg },
     Changed { fg = M.colors.diff_change_fg, bg = M.colors.diff_change_bg },
-    WinBar { bg = M.colors.bg_dark, fg = M.colors.fg },
-    WinBarNC { bg = M.colors.bg_dark, fg = M.colors.fg },
-    Tabline { bg = M.colors.bg_dark, fg = M.colors.fg },
-    TablineSel { bg = M.colors.bg_dark, fg = M.palette.white, bold = true },
+    WinBar { bg = M.colors.bg, fg = M.palette.white, bold = true },
+    WinBarNC { bg = M.colors.bg_light, fg = M.colors.fg },
 
     -- Types
     Type { fg = M.colors.keyword },
@@ -157,19 +154,19 @@ M.theme = lush(function(injected_functions)
     NvimDapViewTab { NormalFloat },
 
     -- NvimTree
-    NvimTreeNormal { bg = M.colors.bg_dark },
-    NvimTreeNormalNC { bg = M.colors.bg_dark },
-    NvimTreeEndOfBuffer { bg = M.colors.bg_dark, fg = M.colors.bg_dark },
+    NvimTreeNormal { bg = M.colors.bg },
+    NvimTreeNormalNC { bg = M.colors.bg },
+    NvimTreeEndOfBuffer { bg = M.colors.bg, fg = M.colors.bg },
     NvimTreeVertSplit { WinSeparator },
     NvimTreeWinSeparator { WinSeparator },
     NvimTreeFolderName { fg = M.colors.folder_name },
     NvimTreeOpenedFolderName { fg = M.colors.folder_name },
 
     -- Noice
-    NoiceCmdline { fg = M.colors.cmd_fg, bg = M.colors.bg_dark },
-    NoiceCmdlineIcon { fg = M.colors.cmd_fg, bg = M.colors.bg_dark },
-    NoiceCmdlinePopup { fg = M.colors.cmd_fg, bg = M.colors.bg_dark },
-    NoiceCmdlineIconLua { fg = M.colors.cmd_fg, bg = M.colors.bg_dark },
+    NoiceCmdline { fg = M.colors.cmd_fg, bg = M.colors.bg },
+    NoiceCmdlineIcon { fg = M.colors.cmd_fg, bg = M.colors.bg },
+    NoiceCmdlinePopup { fg = M.colors.cmd_fg, bg = M.colors.bg },
+    NoiceCmdlineIconLua { fg = M.colors.cmd_fg, bg = M.colors.bg },
     NoiceCmdlinePopupBorderLua { FloatBorder },
     NoiceCmdlinePopupBorderInput { FloatBorder },
     NoiceCmdlinePopupBorderSearch { FloatBorder },
@@ -185,7 +182,7 @@ M.theme = lush(function(injected_functions)
     TelescopeBorder { FloatBorder },
 
     -- Terminal
-    TerminalBuffer { bg = M.colors.bg_dark, fg = M.colors.fg },
+    TerminalBuffer { bg = M.colors.bg, fg = M.colors.fg },
 
     -- Markdown
     RenderMarkdownCode { bg = M.colors.markdown_code_block_bg },
