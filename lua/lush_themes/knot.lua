@@ -100,8 +100,12 @@ M.theme = lush(function(injected_functions)
     Added { fg = M.colors.diff_add_fg, bg = M.colors.diff_add_bg },
     Removed { fg = M.colors.diff_delete_fg, bg = M.colors.diff_delete_bg },
     Changed { fg = M.colors.diff_change_fg, bg = M.colors.diff_change_bg },
+    WinBar { bg = M.colors.bg_light, fg = M.colors.fg },
+    WinBarNC { WinBar },
     WinBarSelected { bg = M.colors.bg, fg = M.palette.white, bold = true },
-    WinBarNotSelected { bg = M.colors.bg_light, fg = M.colors.fg },
+    WinBarNotSelected { WinBar },
+    TabLineSel { WinBarSelected },
+    TabLine { WinBar },
 
     -- Types
     Type { fg = M.colors.keyword },
