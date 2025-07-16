@@ -3,6 +3,16 @@ local hsl = lush.hsl
 
 local M = {}
 
+M.colors = {
+  black_01 = hsl("#030303"),
+  black_02 = hsl("#101010"),
+  black_03 = hsl("#202020"),
+  white_01 = hsl("#F3F1EE"),
+  red_01 = hsl("#910C1A"),
+  red_02 = hsl("#C20D1F"),
+  red_03 = hsl("#FA0D25"),
+}
+
 M.palette = {
   black = hsl("#030303"),
   red = hsl("#910c1a"),
@@ -45,7 +55,7 @@ M.colors.border_bg = M.colors.bg
 M.colors.buffer_selected = M.palette.white
 
 -- Lualine
-M.colors.lualine_normal_bg = M.colors.bg
+M.colors.lualine_normal_bg = M.colors.bg_light
 M.colors.lualine_normal_fg = M.palette.red
 M.colors.lualine_insert_bg = M.palette.red
 M.colors.lualine_insert_fg = M.colors.bg_light
@@ -57,7 +67,7 @@ M.colors.lualine_replace_bg = M.palette.yellow
 M.colors.lualine_replace_fg = M.colors.bg_light
 M.colors.lualine_command_bg = M.palette.blue
 M.colors.lualine_command_fg = M.colors.bg_light
-M.colors.lualine_inactive_bg = M.colors.bg
+M.colors.lualine_inactive_bg = M.colors.bg_light
 M.colors.lualine_inactive_fg = M.palette.white
 
 -- NvimTree
