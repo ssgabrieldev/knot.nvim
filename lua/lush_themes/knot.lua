@@ -4,224 +4,135 @@ local hsl = lush.hsl
 local M = {}
 
 M.colors = {
-  black_01 = hsl("#030303"),
-  black_02 = hsl("#101010"),
-  black_03 = hsl("#202020"),
-  white_01 = hsl("#F3F1EE"),
+  black_01 = hsl("#000000"),
+  black_02 = hsl("#050505"),
+  black_03 = hsl("#0A0A0A"),
+  gray_01 = hsl("#DBDBDB"),
+  gray_02 = hsl("#B3B3B3"),
+  gray_03 = hsl("#858585"),
   red_01 = hsl("#910C1A"),
   red_02 = hsl("#C20D1F"),
   red_03 = hsl("#FA0D25"),
+  yellow_01 = hsl("#BC9909"),
+  yellow_02 = hsl("#DEB50B"),
+  yellow_03 = hsl("#FCCE0D"),
+  blue_01 = hsl("#17699A"),
+  blue_02 = hsl("#1B7BB5"),
+  blue_03 = hsl("#2193D9"),
+  green_01 = hsl("#149C2B"),
+  green_02 = hsl("#1AC938"),
+  green_03 = hsl("#1DF542"),
 }
-
-M.palette = {
-  black = hsl("#030303"),
-  red = hsl("#910c1a"),
-  white = hsl("#F3F1EE"),
-  gray = hsl("#5B5B5B"),
-  yellow = hsl("#BC9909"),
-  blue = hsl("#17699A"),
-  green = hsl("#5A715E")
-}
-M.colors = {
-  -- Editor
-  bg = M.palette.black,
-  bg_light = M.palette.black.li(5),
-  fg = M.palette.gray,
-  fg_dark = M.palette.gray.da(30),
-  keyword = M.palette.red,
-  string = M.palette.red,
-  number = M.palette.white,
-  boolean = M.palette.white,
-  parameter = M.palette.gray,
-  delimiter = M.palette.gray.li(60),
-  cmd_fg = M.palette.blue,
-}
-
--- Diagnostic
-M.colors.diagnostic_info_fg = M.palette.blue
-M.colors.diagnostic_info_bg = M.colors.diagnostic_info_fg.da(80)
-M.colors.diagnostic_warn_fg = M.palette.yellow
-M.colors.diagnostic_warn_bg = M.colors.diagnostic_warn_fg.da(80)
-M.colors.diagnostic_error_fg = M.palette.red
-M.colors.diagnostic_error_bg = M.colors.diagnostic_error_fg.da(80)
-M.colors.diagnostic_hint_fg = M.palette.blue
-M.colors.diagnostic_hint_bg = M.colors.diagnostic_hint_fg.da(80)
-
--- Border
-M.colors.border_fg = M.colors.bg_light
-M.colors.border_bg = M.colors.bg
-
--- BufferLine
-M.colors.buffer_selected = M.palette.white
-
--- Lualine
-M.colors.lualine_normal_bg = M.colors.bg_light
-M.colors.lualine_normal_fg = M.palette.red
-M.colors.lualine_insert_bg = M.palette.red
-M.colors.lualine_insert_fg = M.colors.bg_light
-M.colors.lualine_terminal_bg = M.palette.red
-M.colors.lualine_terminal_fg = M.colors.bg_light
-M.colors.lualine_visual_bg = M.palette.yellow
-M.colors.lualine_visual_fg = M.colors.bg_light
-M.colors.lualine_replace_bg = M.palette.yellow
-M.colors.lualine_replace_fg = M.colors.bg_light
-M.colors.lualine_command_bg = M.palette.blue
-M.colors.lualine_command_fg = M.colors.bg_light
-M.colors.lualine_inactive_bg = M.colors.bg_light
-M.colors.lualine_inactive_fg = M.palette.white
-
--- NvimTree
-M.colors.folder_name = M.colors.fg
-
--- Diff
-local diff_da = 80
-M.colors.diff_add_fg = M.palette.green
-M.colors.diff_delete_fg = M.palette.red
-M.colors.diff_change_fg = M.palette.blue
-M.colors.diff_add_bg = M.palette.green.da(diff_da)
-M.colors.diff_delete_bg = M.palette.red.da(diff_da)
-M.colors.diff_change_bg = M.palette.blue.da(diff_da)
-
--- Markdown
-M.colors.markdown_code_block_bg = M.colors.bg
-
--- Dap
-M.colors.dap_stopped_line_bg = M.palette.red.da(60)
-M.colors.dap_stopped_icon_fg = M.palette.red
 
 M.theme = lush(function(injected_functions)
   local sym = injected_functions.sym
 
   return {
-    -- Common
-    Normal { fg = M.colors.fg, bg = M.colors.bg },
-    EndOfBuffer { fg = M.colors.bg, bg = M.colors.bg },
-    Visual { fg = M.colors.bg, bg = M.colors.fg },
-    CursorLine { bg = M.colors.bg_light },
-    Directory { fg = M.colors.folder_name },
-    NormalFloat { fg = M.colors.fg, bg = M.colors.bg }, -- Normal text in floating windows.
-    FloatBorder { fg = M.colors.border_fg, bg = M.colors.border_bg },
-    WinSeparator { bg = M.colors.border_bg, fg = M.colors.border_fg },
-    StatusLine { bg = M.colors.lualine_inactive_bg },
-    StatusLineNC { bg = M.colors.lualine_inactive_bg },
-    DiffAdd { fg = M.colors.diff_add_fg, bg = M.colors.diff_add_bg },
-    DiffDelete { fg = M.colors.diff_delete_fg, bg = M.colors.diff_delete_bg },
-    DiffChange { fg = M.colors.diff_change_fg, bg = M.colors.diff_change_bg },
-    Added { fg = M.colors.diff_add_fg, bg = M.colors.diff_add_bg },
-    Removed { fg = M.colors.diff_delete_fg, bg = M.colors.diff_delete_bg },
-    Changed { fg = M.colors.diff_change_fg, bg = M.colors.diff_change_bg },
-    WinBar { bg = M.colors.bg, fg = M.colors.fg },
+    ------------
+    -- NeoVim --
+    ------------
+
+    -- TODO: Definir core de diagnostico
+    -- Colors
+
+    -- Window Decoration
+    StatusLine { fg = M.colors.gray_01, bg = M.colors.black_03 },
+    WinSeparator { Normal, fg = StatusLine.bg },
+    WinBar { StatusLine },
     WinBarNC { WinBar },
-    WinBarSelected { bg = M.colors.bg, fg = M.palette.white, bold = true },
-    WinBarNotSelected { WinBar },
-    TabLineSel { WinBarSelected },
-    TabLine { WinBar },
+    FloatBorder { WinSeparator },
+    StatusLineNC { StatusLine },
 
-    -- Types
-    Type { fg = M.colors.keyword },
-    String { fg = M.colors.string },
-    Number { fg = M.colors.number },
-    Boolean { fg = M.colors.boolean },
+    -- Window Content
+    Normal { fg = M.colors.gray_03, bg = M.colors.black_01 },
+    Visual { fg = Normal.fg, bg = M.colors.gray_01 },
+    CursorLine { bg = M.colors.black_02 },
+    Comment { fg = M.colors.gray_03 },
+    keyword { fg = M.colors.red_01 },
+    EndOfBuffer { Normal, fg = Normal.bg },
+    Directory { Normal },
+    NormalFloat { Normal },
+    String { keyword },
+    Identifier { keyword },
+    Function { keyword },
+    Statement { keyword },
+    Delimiter { keyword },
+    Special { keyword },
+    sym("@keyword") { keyword },
+    sym("@string") { keyword },
+    sym("@variable.parameter") { keyword },
+    sym("@function") { keyword },
+    sym("@function.method") { keyword },
+    sym("@function.builtin") { keyword },
+    sym("@method") { keyword },
+    sym("@variable") { fg = Normal.fg },
 
-    -- Identifier
-    Identifier { fg = M.colors.keyword },
-    keyword { fg = M.colors.keyword },
-    Function { fg = M.colors.delimiter },
-    Comment { fg = M.colors.fg_dark },
-    Statement { fg = M.colors.keyword },
-    htmlTagName { fg = M.colors.fg },
-
-    -- Delimiter
-    Delimiter { fg = M.colors.delimiter },
-    Special { fg = M.colors.delimiter },
-
-    -- Gitsigns
-    GitSignsAdd { DiffAdd, bg = "" },
-    GitSignsDelete { DiffDelete, bg = "" },
-    GitSignsChange { DiffChange, bg = "" },
-
-    -- Diagnostic
-    DiagnosticInfo { fg = M.colors.diagnostic_info_fg },
-    DiagnosticWarn { fg = M.colors.diagnostic_warn_fg },
-    DiagnosticError { fg = M.colors.diagnostic_error_fg },
-    DiagnosticHint { fg = M.colors.diagnostic_info_fg },
-    DiagnosticSignInfo { DiagnosticInfo, gui = "NONE" },
-    DiagnosticSignWarn { DiagnosticWarn, gui = "NONE" },
-    DiagnosticSignError { DiagnosticError, gui = "NONE" },
-    DiagnosticSignHint { DiagnosticHint, gui = "NONE" },
-    DiagnosticVirtualTextInfo { DiagnosticInfo, bg = M.colors.diagnostic_info_bg },
-    DiagnosticVirtualTextWarn { DiagnosticWarn, bg = M.colors.diagnostic_warn_bg },
-    DiagnosticVirtualTextError { DiagnosticError, bg = M.colors.diagnostic_error_bg },
-    DiagnosticVirtualTextHint { DiagnosticHint, bg = M.colors.diagnostic_info_bg },
-    DiagnosticUnderlineInfo { gui = "undercurl", sp = M.colors.diagnostic_info_fg },
-    DiagnosticUnderlineWarn { gui = "undercurl", sp = M.colors.diagnostic_warn_fg },
-    DiagnosticUnderlineError { gui = "undercurl", sp = M.colors.diagnostic_error_fg },
-    DiagnosticUnderlineHint { gui = "undercurl", sp = M.colors.diagnostic_hint_fg },
-    ErrorMsg { DiagnosticError },
-    WarningMsg { DiagnosticWarn },
-
-    -- Dap
-    debugPC { bg = M.colors.dap_stopped_line_bg },
-    SignColumn { fg = M.colors.dap_stopped_icon_fg },
-    DapNormal { NormalFloat },
-    DapEndOfBuffer { NormalFloat, fg = NormalFloat.bg },
-    NvimDapViewTab { NormalFloat },
-
-    -- NvimTree
-    NvimTreeNormal { bg = M.colors.bg },
-    NvimTreeNormalNC { bg = M.colors.bg },
-    NvimTreeEndOfBuffer { bg = M.colors.bg, fg = M.colors.bg },
-    NvimTreeVertSplit { WinSeparator },
-    NvimTreeWinSeparator { WinSeparator },
-    NvimTreeFolderName { fg = M.colors.folder_name },
-    NvimTreeOpenedFolderName { fg = M.colors.folder_name },
-
-    -- Noice
-    NoiceCmdline { fg = M.colors.cmd_fg, bg = M.colors.bg },
-    NoiceCmdlineIcon { fg = M.colors.cmd_fg, bg = M.colors.bg },
-    NoiceCmdlinePopup { fg = M.colors.cmd_fg, bg = M.colors.bg },
-    NoiceCmdlineIconLua { fg = M.colors.cmd_fg, bg = M.colors.bg },
-    NoiceCmdlinePopupBorderLua { FloatBorder },
-    NoiceCmdlinePopupBorderInput { FloatBorder },
-    NoiceCmdlinePopupBorderSearch { FloatBorder },
-    NoiceCmdlinePopupBorderCmdline { FloatBorder },
-
-    -- BufferLine
-    BufferLineOffsetSeparator { NvimTreeWinSeparator },
-    BufferLineFill { NvimTreeWinSeparator },
-    BufferLineBufferSelected { fg = M.colors.buffer_selected },
-
-    -- Telescope
-    TelescopeNormal { NormalFloat },
-    TelescopeBorder { FloatBorder },
-
-    -- Terminal
-    TerminalBuffer { bg = M.colors.bg, fg = M.colors.fg },
-
-    -- Markdown
-    RenderMarkdownCode { bg = M.colors.markdown_code_block_bg },
-
-    -- TreeSitter Comon
-    sym("@keyword") { fg = M.colors.keyword },
-
-    -- TreeSitter Types
-    sym("@string") { fg = M.colors.string },
-    sym("@number") { fg = M.colors.number },
-    sym("@boolean") { fg = M.colors.boolean },
-
-    -- TreeSitter Identifier
-    sym("@variable") { fg = M.colors.fg },
-    sym("@variable.parameter") { fg = M.colors.parameter },
-    sym("@function") { fg = M.colors.keyword },
-    sym("@function.method") { fg = M.colors.keyword },
-    sym("@function.builtin") { fg = M.colors.keyword },
-    sym("@method") { fg = M.colors.keyword },
-
-    -- Lsp
-    sym("@lsp.type.property") { fg = M.colors.fg },
-
-    -- Typescript
-    typescriptParens { fg = M.colors.delimiter }
+    -- DiffAdd { fg = M.colors.diff_add_fg, bg = M.colors.diff_add_bg },
+    -- DiffDelete { fg = M.colors.diff_delete_fg, bg = M.colors.diff_delete_bg },
+    -- DiffChange { fg = M.colors.diff_change_fg, bg = M.colors.diff_change_bg },
+    -- Added { fg = M.colors.diff_add_fg, bg = M.colors.diff_add_bg },
+    -- Removed { fg = M.colors.diff_delete_fg, bg = M.colors.diff_delete_bg },
+    -- Changed { fg = M.colors.diff_change_fg, bg = M.colors.diff_change_bg },
+    -- WinBarSelected { bg = M.colors.bg, fg = M.palette.white, bold = true },
+    -- TabLineSel { WinBarSelected },
+    -- TabLine { WinBar },
+    -- Type { fg = M.colors.keyword },
+    -- Number { fg = M.colors.number },
+    -- Boolean { fg = M.colors.boolean },
+    -- htmlTagName { fg = M.colors.fg },
+    -- GitSignsAdd { DiffAdd, bg = "" },
+    -- GitSignsDelete { DiffDelete, bg = "" },
+    -- GitSignsChange { DiffChange, bg = "" },
+    -- DiagnosticInfo { fg = M.colors.diagnostic_info_fg },
+    -- DiagnosticWarn { fg = M.colors.diagnostic_warn_fg },
+    -- DiagnosticError { fg = M.colors.diagnostic_error_fg },
+    -- DiagnosticHint { fg = M.colors.diagnostic_info_fg },
+    -- DiagnosticSignInfo { DiagnosticInfo, gui = "NONE" },
+    -- DiagnosticSignWarn { DiagnosticWarn, gui = "NONE" },
+    -- DiagnosticSignError { DiagnosticError, gui = "NONE" },
+    -- DiagnosticSignHint { DiagnosticHint, gui = "NONE" },
+    -- DiagnosticVirtualTextInfo { DiagnosticInfo, bg = M.colors.diagnostic_info_bg },
+    -- DiagnosticVirtualTextWarn { DiagnosticWarn, bg = M.colors.diagnostic_warn_bg },
+    -- DiagnosticVirtualTextError { DiagnosticError, bg = M.colors.diagnostic_error_bg },
+    -- DiagnosticVirtualTextHint { DiagnosticHint, bg = M.colors.diagnostic_info_bg },
+    -- DiagnosticUnderlineInfo { gui = "undercurl", sp = M.colors.diagnostic_info_fg },
+    -- DiagnosticUnderlineWarn { gui = "undercurl", sp = M.colors.diagnostic_warn_fg },
+    -- DiagnosticUnderlineError { gui = "undercurl", sp = M.colors.diagnostic_error_fg },
+    -- DiagnosticUnderlineHint { gui = "undercurl", sp = M.colors.diagnostic_hint_fg },
+    -- ErrorMsg { DiagnosticError },
+    -- WarningMsg { DiagnosticWarn },
+    -- debugPC { bg = M.colors.dap_stopped_line_bg },
+    -- SignColumn { fg = M.colors.dap_stopped_icon_fg },
+    -- DapNormal { NormalFloat },
+    -- DapEndOfBuffer { NormalFloat, fg = NormalFloat.bg },
+    -- NvimDapViewTab { NormalFloat },
+    -- NvimTreeNormal { bg = M.colors.bg },
+    -- NvimTreeNormalNC { bg = M.colors.bg },
+    -- NvimTreeEndOfBuffer { bg = M.colors.bg, fg = M.colors.bg },
+    -- NvimTreeVertSplit { WinSeparator },
+    -- NvimTreeWinSeparator { WinSeparator },
+    -- NvimTreeFolderName { fg = M.colors.folder_name },
+    -- NvimTreeOpenedFolderName { fg = M.colors.folder_name },
+    -- NoiceCmdline { fg = M.colors.cmd_fg, bg = M.colors.bg },
+    -- NoiceCmdlineIcon { fg = M.colors.cmd_fg, bg = M.colors.bg },
+    -- NoiceCmdlinePopup { fg = M.colors.cmd_fg, bg = M.colors.bg },
+    -- NoiceCmdlineIconLua { fg = M.colors.cmd_fg, bg = M.colors.bg },
+    -- NoiceCmdlinePopupBorderLua { FloatBorder },
+    -- NoiceCmdlinePopupBorderInput { FloatBorder },
+    -- NoiceCmdlinePopupBorderSearch { FloatBorder },
+    -- NoiceCmdlinePopupBorderCmdline { FloatBorder },
+    -- BufferLineOffsetSeparator { NvimTreeWinSeparator },
+    -- BufferLineFill { NvimTreeWinSeparator },
+    -- BufferLineBufferSelected { fg = M.colors.buffer_selected },
+    -- TelescopeNormal { NormalFloat },
+    -- TelescopeBorder { FloatBorder },
+    -- TerminalBuffer { bg = M.colors.bg, fg = M.colors.fg },
+    -- RenderMarkdownCode { bg = M.colors.markdown_code_block_bg },
+    -- typescriptParens { fg = M.colors.delimiter }
+    --
+    -- sym("@number") { fg = M.colors.number },
+    -- sym("@boolean") { fg = M.colors.boolean },
+    -- sym("@lsp.type.property") { fg = M.colors.fg },
   }
 end)
 
