@@ -45,7 +45,7 @@ M.theme = lush(function(injected_functions)
     Added { fg = M.colors.green_03, bg = M.colors.green_01 },
     Removed { fg = M.colors.red_03, bg = M.colors.red_01 },
     Changed { fg = M.colors.blue_03, bg = M.colors.blue_01 },
-    Search { bg = M.colors.yellow_01},
+    Search { fg = M.colors.yellow_03, bg = M.colors.yellow_01 },
 
     -- Window Decoration
     StatusLineNC { StatusLine, fg = M.colors.gray_03 },
