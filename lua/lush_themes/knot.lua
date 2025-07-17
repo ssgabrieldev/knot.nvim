@@ -50,13 +50,14 @@ M.theme = lush(function(injected_functions)
     -- Window Decoration
     StatusLineNC { StatusLine, fg = M.colors.gray_03 },
     WinSeparator { Normal, fg = StatusLine.bg },
-    WinBar { StatusLine },
+    WinBar { fg = StatusLine.fg, bg = StatusLine.bg },
     WinBarNC { WinBar },
     FloatBorder { WinSeparator },
 
     -- Window Content
     Visual { bg = M.colors.gray_03 },
-    CursorLine { bg = M.colors.black_02 },
+    CursorLine { bg = Normal.bg },
+    CursorLineNr { fg = M.colors.red_03 },
     EndOfBuffer { Normal, fg = Normal.bg },
     Directory { Normal },
     NormalFloat { Normal },
