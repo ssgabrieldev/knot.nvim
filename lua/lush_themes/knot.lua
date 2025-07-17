@@ -93,7 +93,7 @@ M.theme = lush(function(injected_functions)
     typescriptParens { Delimiter },
     sym("@keyword") { Keyword },
     sym("@string") { Keyword },
-    sym("@variable.parameter") { Keyword },
+    sym("@variable.parameter") { Delimiter },
     sym("@function") { Keyword },
     sym("@function.method") { Keyword },
     sym("@function.builtin") { Keyword },
@@ -110,6 +110,10 @@ M.theme = lush(function(injected_functions)
     -- Telescope
     TelescopeNormal { NormalFloat },
     TelescopeBorder { FloatBorder },
+
+    -- ToggleTerm
+    WinBarActive { fg = M.colors.gray_01 },
+    WinBarInactive { fg = M.colors.gray_01 },
   }
 end)
 
