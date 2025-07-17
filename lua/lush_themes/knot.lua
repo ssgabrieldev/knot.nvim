@@ -55,7 +55,7 @@ M.theme = lush(function(injected_functions)
     FloatBorder { WinSeparator },
 
     -- Window Content
-    Visual { fg = Normal.fg, bg = M.colors.gray_01 },
+    Visual { bg = M.colors.gray_03 },
     CursorLine { bg = M.colors.black_02 },
     EndOfBuffer { Normal, fg = Normal.bg },
     Directory { Normal },
