@@ -114,6 +114,9 @@ M.theme = lush(function(injected_functions)
     -- ToggleTerm
     WinBarActive { fg = M.colors.gray_01 },
     WinBarInactive { fg = M.colors.gray_01 },
+
+    -- CMP
+    PmenuSel { bg = M.colors.black_03, gui = "NONE" }
   }
 end)
 
