@@ -1,28 +1,34 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local M = {}
-
-M.colors = {
-  black_01 = hsl("#000000"),
-  black_02 = hsl("#050505"),
-  black_03 = hsl("#0A0A0A"),
-  gray_01 = hsl("#878787"),
-  gray_02 = hsl("#5C5C5C"),
-  gray_03 = hsl("#333232"),
-  red_01 = hsl("#3d060c"),
-  red_02 = hsl("#780d19"),
-  red_03 = hsl("#b81427"),
-  yellow_01 = hsl("#574703"),
-  yellow_02 = hsl("#756006"),
-  yellow_03 = hsl("#BC9909"),
-  blue_01 = hsl("#082536"),
-  blue_02 = hsl("#0f4463"),
-  blue_03 = hsl("#17699A"),
-  green_01 = hsl("#06360e"),
-  green_02 = hsl("#0c6e1c"),
-  green_03 = hsl("#149C2B"),
+local M = {
+  colors = {}
 }
+
+M.colors.black_01 = hsl("#000000")
+M.colors.black_02 = M.colors.black_01.li(4)
+M.colors.black_03 = M.colors.black_01.li(8)
+M.colors.black_04 = M.colors.black_01.li(16)
+M.colors.gray_01 = hsl("#323232")
+M.colors.gray_02 = M.colors.gray_01.li(4)
+M.colors.gray_03 = M.colors.gray_01.li(8)
+M.colors.gray_04 = M.colors.gray_01.li(16)
+M.colors.red_01 = hsl("#3d060c")
+M.colors.red_02 = M.colors.red_01.li(4)
+M.colors.red_03 = M.colors.red_01.li(8)
+M.colors.red_04 = M.colors.red_01.li(16)
+M.colors.yellow_01 = hsl("#574703")
+M.colors.yellow_02 = M.colors.yellow_01.li(4)
+M.colors.yellow_03 = M.colors.yellow_01.li(8)
+M.colors.yellow_04 = M.colors.yellow_01.li(16)
+M.colors.blue_01 = hsl("#082536")
+M.colors.blue_02 = M.colors.blue_01.li(4)
+M.colors.blue_03 = M.colors.blue_01.li(8)
+M.colors.blue_04 = M.colors.blue_01.li(16)
+M.colors.green_01 = hsl("#06360e")
+M.colors.green_02 = M.colors.green_01.li(4)
+M.colors.green_03 = M.colors.green_01.li(8)
+M.colors.green_04 = M.colors.green_01.li(16)
 
 M.theme = lush(function(injected_functions)
   local sym = injected_functions.sym
@@ -33,29 +39,29 @@ M.theme = lush(function(injected_functions)
     ------------
 
     -- Base
-    Normal { fg = M.colors.gray_02, bg = M.colors.black_01 },
-    Comment { fg = M.colors.gray_03 },
-    Delimiter { fg = M.colors.gray_01 },
-    Keyword { fg = M.colors.red_03 },
-    StatusLine { fg = M.colors.gray_01, bg = M.colors.black_03 },
-    DiagnosticInfo { fg = M.colors.blue_03 },
-    DiagnosticWarn { fg = M.colors.yellow_03 },
-    DiagnosticError { fg = M.colors.red_03 },
-    DiagnosticHint { fg = M.colors.blue_03 },
-    Added { fg = M.colors.green_03, bg = M.colors.green_01 },
-    Removed { fg = M.colors.red_03, bg = M.colors.red_01 },
-    Changed { fg = M.colors.blue_03, bg = M.colors.blue_01 },
-    Search { fg = M.colors.yellow_03, bg = M.colors.yellow_01 },
+    Normal { fg = M.colors.gray_04, bg = M.colors.black_01 },
+    Comment { fg = M.colors.gray_02 },
+    Delimiter { fg = M.colors.gray_03 },
+    Keyword { fg = M.colors.red_04 },
+    StatusLine { fg = M.colors.gray_04, bg = M.colors.black_02 },
+    DiagnosticInfo { fg = M.colors.blue_04 },
+    DiagnosticWarn { fg = M.colors.yellow_04 },
+    DiagnosticError { fg = M.colors.red_04 },
+    DiagnosticHint { fg = M.colors.blue_04 },
+    Added { fg = M.colors.green_04, bg = M.colors.green_01 },
+    Removed { fg = M.colors.red_04, bg = M.colors.red_01 },
+    Changed { fg = M.colors.blue_04, bg = M.colors.blue_01 },
+    Search { fg = M.colors.yellow_04, bg = M.colors.yellow_01 },
 
     -- Window Decoration
-    StatusLineNC { StatusLine, fg = M.colors.gray_03 },
+    StatusLineNC { StatusLine, fg = M.colors.gray_01 },
     WinSeparator { Normal, fg = StatusLine.bg },
     WinBar { fg = StatusLine.fg, bg = StatusLine.bg },
     WinBarNC { WinBar },
     FloatBorder { WinSeparator },
 
     -- Window Content
-    Visual { bg = M.colors.gray_03 },
+    Visual { bg = M.colors.black_03 },
     CursorLine { bg = Normal.bg },
     CursorLineNr { fg = M.colors.red_03 },
     EndOfBuffer { Normal, fg = Normal.bg },
@@ -112,8 +118,8 @@ M.theme = lush(function(injected_functions)
     TelescopeBorder { FloatBorder },
 
     -- ToggleTerm
-    WinBarActive { fg = M.colors.gray_01 },
-    WinBarInactive { fg = M.colors.gray_01 },
+    WinBarActive { fg = M.colors.gray_03 },
+    WinBarInactive { fg = M.colors.gray_03 },
 
     -- CMP
     PmenuSel { bg = M.colors.black_03, gui = "NONE" }
