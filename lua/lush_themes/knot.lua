@@ -56,7 +56,7 @@ M.theme = lush(function(injected_functions)
     -- Window Decoration
     StatusLineNC { StatusLine, fg = M.colors.gray_01 },
     WinSeparator { Normal, fg = StatusLine.bg },
-    WinBar { fg = StatusLine.fg, bg = StatusLine.bg },
+    WinBar { fg = StatusLine.fg, bg = M.colors.black_01 },
     WinBarNC { WinBar },
     FloatBorder { WinSeparator },
 
@@ -116,10 +116,6 @@ M.theme = lush(function(injected_functions)
     -- Telescope
     TelescopeNormal { NormalFloat },
     TelescopeBorder { FloatBorder },
-
-    -- ToggleTerm
-    WinBarActive { fg = M.colors.gray_03 },
-    WinBarInactive { fg = M.colors.gray_03 },
 
     -- CMP
     PmenuSel { bg = M.colors.black_03, gui = "NONE" }
