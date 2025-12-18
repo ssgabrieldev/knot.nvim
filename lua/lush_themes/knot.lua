@@ -121,8 +121,8 @@ M.theme = lush(function(injected_functions)
     PmenuSel { bg = M.colors.black_03, gui = "NONE" },
 
     -- NvimTree
-    -- NvimTreeNormal {bg = "#040404"},
-    -- NvimTreeEndOfBuffer {bg = "#040404", fg = "#040404"}
+    NvimTreeNormal {bg = "#040404"},
+    NvimTreeEndOfBuffer {bg = "#040404", fg = "#040404"}
   }
 end)
 
