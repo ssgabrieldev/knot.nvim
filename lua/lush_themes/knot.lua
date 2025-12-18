@@ -2,7 +2,7 @@ local lush = require('lush')
 local hsl = lush.hsl
 
 local M = {
-  colors = {}
+    colors = {}
 }
 
 M.colors.black_01 = hsl("#080808")
@@ -31,99 +31,100 @@ M.colors.green_03 = M.colors.green_01.li(8)
 M.colors.green_04 = M.colors.green_01.li(16)
 
 M.theme = lush(function(injected_functions)
-  local sym = injected_functions.sym
+    local sym = injected_functions.sym
 
-  return {
-    ------------
-    -- NeoVim --
-    ------------
+    return {
+        ------------
+        -- NeoVim --
+        ------------
 
-    -- Base
-    Normal { fg = M.colors.gray_04, bg = M.colors.black_01 },
-    Comment { fg = M.colors.gray_02 },
-    Delimiter { fg = M.colors.gray_03 },
-    Keyword { fg = M.colors.red_04 },
-    StatusLine { fg = M.colors.gray_04, bg = M.colors.black_02 },
-    DiagnosticInfo { fg = M.colors.blue_04 },
-    DiagnosticWarn { fg = M.colors.yellow_04 },
-    DiagnosticError { fg = M.colors.red_04 },
-    DiagnosticHint { fg = M.colors.blue_04 },
-    Added { fg = M.colors.green_04, bg = M.colors.green_01 },
-    Removed { fg = M.colors.red_04, bg = M.colors.red_01 },
-    Changed { fg = M.colors.blue_04, bg = M.colors.blue_01 },
-    Search { fg = M.colors.yellow_04, bg = M.colors.yellow_01 },
+        -- Base
+        Normal { fg = M.colors.gray_04, bg = M.colors.black_01 },
+        Comment { fg = M.colors.gray_02 },
+        Delimiter { fg = M.colors.gray_03 },
+        Keyword { fg = M.colors.red_04 },
+        StatusLine { fg = M.colors.gray_04, bg = M.colors.black_02 },
+        DiagnosticInfo { fg = M.colors.blue_04 },
+        DiagnosticWarn { fg = M.colors.yellow_04 },
+        DiagnosticError { fg = M.colors.red_04 },
+        DiagnosticHint { fg = M.colors.blue_04 },
+        Added { fg = M.colors.green_04, bg = M.colors.green_01 },
+        Removed { fg = M.colors.red_04, bg = M.colors.red_01 },
+        Changed { fg = M.colors.blue_04, bg = M.colors.blue_01 },
+        Search { fg = M.colors.yellow_04, bg = M.colors.yellow_01 },
 
-    -- Window Decoration
-    StatusLineNC { StatusLine, fg = M.colors.gray_01 },
-    WinSeparator { Normal, fg = StatusLine.bg },
-    WinBar { fg = StatusLine.fg, bg = M.colors.black_01 },
-    WinBarNC { WinBar },
-    FloatBorder { WinSeparator },
+        -- Window Decoration
+        StatusLineNC { StatusLine, fg = M.colors.gray_01 },
+        WinSeparator { Normal, fg = StatusLine.bg },
+        WinBar { fg = StatusLine.fg, bg = M.colors.black_01 },
+        WinBarNC { WinBar },
+        FloatBorder { WinSeparator },
 
-    -- Window Content
-    Visual { bg = M.colors.black_03 },
-    CursorLine { bg = Normal.bg },
-    CursorLineNr { fg = M.colors.red_03 },
-    EndOfBuffer { Normal, fg = Normal.bg },
-    Directory { Normal },
-    NormalFloat { Normal },
-    String { Keyword },
-    Function { Keyword },
-    Statement { Keyword },
-    Special { Delimiter },
-    Type { Keyword },
-    Identifier { Delimiter },
-    Number { Delimiter },
-    Boolean { Delimiter },
-    DiffAdd { Added },
-    DiffDelete { Removed },
-    DiffChange { Changed },
-    GitSignsAdd { Added, bg = "" },
-    GitSignsDelete { Removed, bg = "" },
-    GitSignsChange { Changed, bg = "" },
-    DiagnosticSignInfo { DiagnosticInfo, gui = "NONE" },
-    DiagnosticSignWarn { DiagnosticWarn, gui = "NONE" },
-    DiagnosticSignError { DiagnosticError, gui = "NONE" },
-    DiagnosticSignHint { DiagnosticHint, gui = "NONE" },
-    DiagnosticVirtualTextInfo { DiagnosticInfo, bg = M.colors.blue_01 },
-    DiagnosticVirtualTextWarn { DiagnosticWarn, bg = M.colors.yellow_01 },
-    DiagnosticVirtualTextError { DiagnosticError, bg = M.colors.red_01 },
-    DiagnosticVirtualTextHint { DiagnosticHint, bg = M.colors.blue_01 },
-    DiagnosticUnderlineInfo { sp = DiagnosticInfo.fg, gui = "undercurl" },
-    DiagnosticUnderlineWarn { sp = DiagnosticWarn.fg, gui = "undercurl" },
-    DiagnosticUnderlineError { sp = DiagnosticError.fg, gui = "undercurl" },
-    DiagnosticUnderlineHint { sp = DiagnosticHint.fg, gui = "undercurl" },
-    ErrorMsg { DiagnosticError },
-    WarningMsg { DiagnosticWarn },
-    htmlTagName { Delimiter },
-    typescriptParens { Delimiter },
-    sym("@keyword") { Keyword },
-    sym("@string") { Keyword },
-    sym("@variable.parameter") { Delimiter },
-    sym("@function") { Keyword },
-    sym("@function.method") { Keyword },
-    sym("@function.builtin") { Keyword },
-    sym("@method") { Keyword },
-    sym("@variable") { fg = Normal.fg },
-    sym("@number") { Delimiter },
-    sym("@boolean") { Delimiter },
-    sym("@lsp.type.property") { fg = Normal.fg },
+        -- Window Content
+        Visual { bg = M.colors.black_03 },
+        CursorLine { bg = Normal.bg },
+        CursorLineNr { fg = M.colors.red_03 },
+        EndOfBuffer { Normal, fg = Normal.bg },
+        Directory { Normal },
+        NormalFloat { Normal },
+        String { Keyword },
+        Function { Keyword },
+        Statement { Keyword },
+        Special { Delimiter },
+        Type { Keyword },
+        Identifier { Delimiter },
+        Number { Delimiter },
+        Boolean { Delimiter },
+        DiffAdd { Added },
+        DiffDelete { Removed },
+        DiffChange { Changed },
+        GitSignsAdd { Added, bg = "" },
+        GitSignsDelete { Removed, bg = "" },
+        GitSignsChange { Changed, bg = "" },
+        DiagnosticSignInfo { DiagnosticInfo, gui = "NONE" },
+        DiagnosticSignWarn { DiagnosticWarn, gui = "NONE" },
+        DiagnosticSignError { DiagnosticError, gui = "NONE" },
+        DiagnosticSignHint { DiagnosticHint, gui = "NONE" },
+        DiagnosticVirtualTextInfo { DiagnosticInfo, bg = M.colors.blue_01 },
+        DiagnosticVirtualTextWarn { DiagnosticWarn, bg = M.colors.yellow_01 },
+        DiagnosticVirtualTextError { DiagnosticError, bg = M.colors.red_01 },
+        DiagnosticVirtualTextHint { DiagnosticHint, bg = M.colors.blue_01 },
+        DiagnosticUnderlineInfo { sp = DiagnosticInfo.fg, gui = "undercurl" },
+        DiagnosticUnderlineWarn { sp = DiagnosticWarn.fg, gui = "undercurl" },
+        DiagnosticUnderlineError { sp = DiagnosticError.fg, gui = "undercurl" },
+        DiagnosticUnderlineHint { sp = DiagnosticHint.fg, gui = "undercurl" },
+        ErrorMsg { DiagnosticError },
+        WarningMsg { DiagnosticWarn },
+        htmlTagName { Delimiter },
+        typescriptParens { Delimiter },
+        sym("@keyword") { Keyword },
+        sym("@string") { Keyword },
+        sym("@variable.parameter") { Delimiter },
+        sym("@function") { Keyword },
+        sym("@function.method") { Keyword },
+        sym("@function.builtin") { Keyword },
+        sym("@method") { Keyword },
+        sym("@variable") { fg = Normal.fg },
+        sym("@number") { Delimiter },
+        sym("@boolean") { Delimiter },
+        sym("@lsp.type.property") { fg = Normal.fg },
 
-    -------------
-    -- Plugins --
-    -------------
+        -------------
+        -- Plugins --
+        -------------
 
-    -- Telescope
-    TelescopeNormal { NormalFloat },
-    TelescopeBorder { FloatBorder },
+        -- Telescope
+        TelescopeNormal { NormalFloat },
+        TelescopeBorder { FloatBorder },
 
-    -- CMP
-    PmenuSel { bg = M.colors.black_03, gui = "NONE" },
+        -- CMP
+        PmenuSel { bg = M.colors.black_03, gui = "NONE" },
 
-    -- NvimTree
-    NvimTreeNormal {bg = "#040404"},
-    NvimTreeEndOfBuffer {bg = "#040404", fg = "#040404"}
-  }
+        -- NvimTree
+        NvimTreeNormal { bg = M.colors.black_01.da(50) },
+        NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
+        NvimTreeCursorLine { bg = NvimTreeNormal.bg }
+    }
 end)
 
 return M
