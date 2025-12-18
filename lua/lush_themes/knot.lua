@@ -5,7 +5,7 @@ local M = {
   colors = {}
 }
 
-M.colors.black_01 = hsl("#000000")
+M.colors.black_01 = hsl("#080808")
 M.colors.black_02 = M.colors.black_01.li(4)
 M.colors.black_03 = M.colors.black_01.li(8)
 M.colors.black_04 = M.colors.black_01.li(16)
@@ -118,7 +118,11 @@ M.theme = lush(function(injected_functions)
     TelescopeBorder { FloatBorder },
 
     -- CMP
-    PmenuSel { bg = M.colors.black_03, gui = "NONE" }
+    PmenuSel { bg = M.colors.black_03, gui = "NONE" },
+
+    -- NvimTree
+    -- NvimTreeNormal {bg = "#040404"},
+    -- NvimTreeEndOfBuffer {bg = "#040404", fg = "#040404"}
   }
 end)
 
