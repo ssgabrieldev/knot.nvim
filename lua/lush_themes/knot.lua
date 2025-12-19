@@ -5,7 +5,7 @@ local M = {
     colors = {}
 }
 
-M.colors.black_01 = hsl("#080808")
+M.colors.black_01 = hsl("#000000")
 M.colors.black_02 = M.colors.black_01.li(4)
 M.colors.black_03 = M.colors.black_01.li(8)
 M.colors.black_04 = M.colors.black_01.li(16)
