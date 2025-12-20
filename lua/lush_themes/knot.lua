@@ -123,7 +123,11 @@ M.theme = lush(function(injected_functions)
         -- NvimTree
         NvimTreeNormal { bg = M.colors.black_01.da(50) },
         NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
-        NvimTreeCursorLine { bg = NvimTreeNormal.bg }
+        NvimTreeCursorLine { bg = NvimTreeNormal.bg },
+
+        -- Dap View
+        TabLine { NvimTreeNormal },
+        NvimDapViewTabSelected { bg = NvimTreeNormal.bg, gui = "bold" }
     }
 end)
 
