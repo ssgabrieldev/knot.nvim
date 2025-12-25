@@ -121,13 +121,24 @@ M.theme = lush(function(injected_functions)
         PmenuSel { bg = M.colors.black_03, gui = "NONE" },
 
         -- NvimTree
-        NvimTreeNormal { bg = M.colors.black_01.da(50) },
+        NvimTreeNormal { bg = M.colors.black_01.li(2) },
         NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
         NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
         -- Dap View
         TabLine { NvimTreeNormal },
-        NvimDapViewTabSelected { bg = NvimTreeNormal.bg, gui = "bold" }
+        NvimDapViewTabSelected { bg = NvimTreeNormal.bg, gui = "bold" },
+
+        -- Buffer Line
+        BufferLineFill { bg = NvimTreeNormal.bg },
+        BufferLineBackground { bg = NvimTreeNormal.bg },
+        BufferLineSeparator { bg = NvimTreeNormal.bg, fg = Normal.bg },
+        BufferLineOffsetSeparator { bg = Normal.bg, fg = NvimTreeNormal.bg },
+        BufferLineHint { bg = NvimTreeNormal.bg },
+        BufferLineError { bg = NvimTreeNormal.bg },
+        BufferLineWarning { bg = NvimTreeNormal.bg },
+        BufferLineInfo { bg = NvimTreeNormal.bg },
+        BufferLineModified { bg = NvimTreeNormal.bg },
     }
 end)
 
