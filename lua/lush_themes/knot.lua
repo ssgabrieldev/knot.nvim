@@ -133,7 +133,7 @@ M.theme = lush(function(injected_functions)
         BufferLineFill { bg = NvimTreeNormal.bg },
         BufferLineBackground { bg = NvimTreeNormal.bg },
         BufferLineSeparator { bg = NvimTreeNormal.bg, fg = Normal.bg },
-        BufferLineOffsetSeparator { bg = Normal.bg, fg = NvimTreeNormal.bg },
+        BufferLineOffsetSeparator { bg = Normal.bg, fg = StatusLine.bg },
         BufferLineHint { bg = NvimTreeNormal.bg },
         BufferLineError { bg = NvimTreeNormal.bg },
         BufferLineWarning { bg = NvimTreeNormal.bg },
