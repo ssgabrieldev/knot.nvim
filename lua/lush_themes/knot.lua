@@ -43,7 +43,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray_02 },
         Delimiter { fg = M.colors.gray_03 },
         Keyword { fg = M.colors.red_04 },
-        StatusLine { fg = M.colors.gray_04, bg = M.colors.black_02 },
+        StatusLine { fg = M.colors.gray_04, bg = M.colors.black_01.li(2) },
         DiagnosticInfo { fg = M.colors.blue_04 },
         DiagnosticWarn { fg = M.colors.yellow_04 },
         DiagnosticError { fg = M.colors.red_04 },
