@@ -5,10 +5,7 @@ local M = {
     colors = {}
 }
 
-M.colors.black_01 = hsl("#000000")
-M.colors.black_02 = M.colors.black_01.li(2)
-M.colors.black_03 = M.colors.black_01.li(4)
-M.colors.black_04 = M.colors.black_01.li(8)
+M.colors.black = hsl("#000000")
 M.colors.gray_01 = hsl("#626262")
 M.colors.gray_02 = M.colors.gray_01.li(4)
 M.colors.gray_03 = M.colors.gray_01.li(8)
@@ -39,11 +36,11 @@ M.theme = lush(function(injected_functions)
         ------------
 
         -- Base
-        Normal { fg = M.colors.gray_04, bg = M.colors.black_01 },
+        Normal { fg = M.colors.gray_04, bg = M.colors.black },
         Comment { fg = M.colors.gray_02 },
         Delimiter { fg = M.colors.gray_03 },
         Keyword { fg = M.colors.red_04 },
-        StatusLine { fg = M.colors.gray_04, bg = M.colors.black_03 },
+        StatusLine { fg = M.colors.gray_04, bg = M.colors.black.li(8) },
         DiagnosticInfo { fg = M.colors.blue_04 },
         DiagnosticWarn { fg = M.colors.yellow_04 },
         DiagnosticError { fg = M.colors.red_04 },
@@ -56,12 +53,12 @@ M.theme = lush(function(injected_functions)
         -- Window Decoration
         StatusLineNC { StatusLine, fg = M.colors.gray_01 },
         WinSeparator { Normal, fg = StatusLine.bg },
-        WinBar { fg = StatusLine.fg, bg = M.colors.black_01 },
+        WinBar { fg = StatusLine.fg, bg = M.colors.black },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator, fg = M.colors.gray_01 },
 
         -- Window Content
-        Visual { bg = M.colors.black_03 },
+        Visual { bg = M.colors.black.li(10) },
         CursorLine { bg = Normal.bg },
         CursorLineNr { fg = M.colors.red_03 },
         EndOfBuffer { Normal, fg = Normal.bg },
@@ -118,10 +115,10 @@ M.theme = lush(function(injected_functions)
         TelescopeBorder { FloatBorder },
 
         -- CMP
-        PmenuSel { bg = M.colors.black_03, gui = "NONE" },
+        PmenuSel { bg = M.colors.black.li(4), gui = "NONE" },
 
         -- NvimTree
-        NvimTreeNormal { bg = M.colors.black_02 },
+        NvimTreeNormal { bg = M.colors.black.li(2) },
         NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
         NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
