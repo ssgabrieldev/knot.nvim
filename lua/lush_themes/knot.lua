@@ -6,9 +6,9 @@ local M = {
 }
 
 M.colors.black_01 = hsl("#000000")
-M.colors.black_02 = M.colors.black_01.li(4)
-M.colors.black_03 = M.colors.black_01.li(8)
-M.colors.black_04 = M.colors.black_01.li(16)
+M.colors.black_02 = M.colors.black_01.li(2)
+M.colors.black_03 = M.colors.black_01.li(4)
+M.colors.black_04 = M.colors.black_01.li(8)
 M.colors.gray_01 = hsl("#626262")
 M.colors.gray_02 = M.colors.gray_01.li(4)
 M.colors.gray_03 = M.colors.gray_01.li(8)
@@ -43,7 +43,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray_02 },
         Delimiter { fg = M.colors.gray_03 },
         Keyword { fg = M.colors.red_04 },
-        StatusLine { fg = M.colors.gray_04, bg = M.colors.black_02 },
+        StatusLine { fg = M.colors.gray_04, bg = M.colors.black_03 },
         DiagnosticInfo { fg = M.colors.blue_04 },
         DiagnosticWarn { fg = M.colors.yellow_04 },
         DiagnosticError { fg = M.colors.red_04 },
@@ -121,7 +121,7 @@ M.theme = lush(function(injected_functions)
         PmenuSel { bg = M.colors.black_03, gui = "NONE" },
 
         -- NvimTree
-        NvimTreeNormal { bg = M.colors.black_01.li(2) },
+        NvimTreeNormal { bg = M.colors.black_02 },
         NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
         NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
