@@ -26,7 +26,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray.li(4) },
         Delimiter { fg = M.colors.gray.li(8) },
         Keyword { fg = M.colors.red.li(32) },
-        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(1) },
+        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black },
         DiagnosticInfo { fg = M.colors.blue.li(16) },
         DiagnosticWarn { fg = M.colors.yellow.li(16) },
         DiagnosticError { fg = M.colors.red.li(32) },
@@ -38,10 +38,10 @@ M.theme = lush(function(injected_functions)
 
         -- Window Decoration
         StatusLineNC { StatusLine, fg = M.colors.black.li(2) },
-        WinSeparator { Normal, fg = StatusLine.bg },
+        WinSeparator { Normal, fg = M.colors.gray },
         WinBar { fg = StatusLine.fg, bg = M.colors.black },
         WinBarNC { WinBar },
-        FloatBorder { WinSeparator, fg = M.colors.gray },
+        FloatBorder { WinSeparator },
 
         -- Window Content
         Visual { bg = M.colors.black.li(10) },
@@ -116,7 +116,7 @@ M.theme = lush(function(injected_functions)
         BufferLineFill { bg = NvimTreeNormal.bg },
         BufferLineBackground { bg = NvimTreeNormal.bg },
         BufferLineSeparator { bg = NvimTreeNormal.bg, fg = Normal.bg },
-        BufferLineOffsetSeparator { bg = Normal.bg, fg = StatusLine.bg },
+        BufferLineOffsetSeparator { WinSeparator },
         BufferLineHint { bg = NvimTreeNormal.bg },
         BufferLineError { bg = NvimTreeNormal.bg },
         BufferLineWarning { bg = NvimTreeNormal.bg },
