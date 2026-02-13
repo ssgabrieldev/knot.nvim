@@ -26,7 +26,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray.li(4) },
         Delimiter { fg = M.colors.gray.li(8) },
         Keyword { fg = M.colors.red.li(32) },
-        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black },
+        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(4) },
         DiagnosticInfo { fg = M.colors.blue.li(16) },
         DiagnosticWarn { fg = M.colors.yellow.li(16) },
         DiagnosticError { fg = M.colors.red.li(32) },
@@ -39,7 +39,7 @@ M.theme = lush(function(injected_functions)
         -- Window Decoration
         StatusLineNC { StatusLine, fg = M.colors.black.li(2) },
         WinSeparator { Normal, fg = M.colors.gray },
-        WinBar { fg = StatusLine.fg, bg = M.colors.black },
+        WinBar { bg = StatusLine.bg },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator },
 
@@ -104,7 +104,7 @@ M.theme = lush(function(injected_functions)
         PmenuSel { bg = M.colors.black.li(4), gui = "NONE" },
 
         -- NvimTree
-        NvimTreeNormal { bg = StatusLine.bg },
+        NvimTreeNormal { bg = M.colors.black },
         NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
         NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
@@ -113,15 +113,15 @@ M.theme = lush(function(injected_functions)
         NvimDapViewTabSelected { bg = NvimTreeNormal.bg, gui = "bold" },
 
         -- Buffer Line
-        BufferLineFill { bg = NvimTreeNormal.bg },
-        BufferLineBackground { bg = NvimTreeNormal.bg },
-        BufferLineSeparator { bg = NvimTreeNormal.bg, fg = Normal.bg },
+        BufferLineFill { bg = WinBar.bg },
+        BufferLineBackground { bg = WinBar.bg },
+        BufferLineSeparator { bg = WinBar.bg, fg = Normal.bg },
         BufferLineOffsetSeparator { WinSeparator },
-        BufferLineHint { bg = NvimTreeNormal.bg },
-        BufferLineError { bg = NvimTreeNormal.bg },
-        BufferLineWarning { bg = NvimTreeNormal.bg },
-        BufferLineInfo { bg = NvimTreeNormal.bg },
-        BufferLineModified { bg = NvimTreeNormal.bg },
+        BufferLineHint { bg = WinBar.bg },
+        BufferLineError { bg = WinBar.bg },
+        BufferLineWarning { bg = WinBar.bg },
+        BufferLineInfo { bg = WinBar.bg },
+        BufferLineModified { bg = WinBar.bg },
     }
 end)
 
