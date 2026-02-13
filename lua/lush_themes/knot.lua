@@ -7,7 +7,6 @@ local M = {
 
 -- Definição das cores base
 M.colors.black = hsl("#000000")
--- M.colors.gray = hsl("#626262")
 M.colors.gray = hsl("#828282")
 M.colors.red = hsl("#3d060c")
 M.colors.yellow = hsl("#574703")
@@ -27,7 +26,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray.li(4) },
         Delimiter { fg = M.colors.gray.li(8) },
         Keyword { fg = M.colors.red.li(32) },
-        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(2) },
+        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(1) },
         DiagnosticInfo { fg = M.colors.blue.li(16) },
         DiagnosticWarn { fg = M.colors.yellow.li(16) },
         DiagnosticError { fg = M.colors.red.li(32) },
