@@ -26,7 +26,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray.li(4) },
         Delimiter { fg = M.colors.gray.li(8) },
         Keyword { fg = M.colors.red.li(32) },
-        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(4) },
+        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(2) },
         DiagnosticInfo { fg = M.colors.blue.li(32) },
         DiagnosticWarn { fg = M.colors.yellow.li(32) },
         DiagnosticError { fg = M.colors.red.li(32) },
@@ -38,7 +38,7 @@ M.theme = lush(function(injected_functions)
 
         -- Window Decoration
         StatusLineNC { StatusLine, fg = M.colors.black.li(2) },
-        WinSeparator { Normal, fg = M.colors.gray },
+        WinSeparator { Normal, fg = StatusLine.bg },
         WinBar { bg = StatusLine.bg },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator },
