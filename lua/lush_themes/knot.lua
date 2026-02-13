@@ -47,7 +47,7 @@ M.theme = lush(function(injected_functions)
         -- Window Content
         Visual { bg = M.colors.black.li(10) },
         CursorLine { bg = Normal.bg },
-        CursorLineNr { fg = M.colors.red.li(8) },
+        CursorLineNr { fg = Keyword.fg },
         EndOfBuffer { Normal, fg = Normal.bg },
         Directory { Normal },
         NormalFloat { Normal },
