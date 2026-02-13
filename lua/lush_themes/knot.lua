@@ -5,27 +5,14 @@ local M = {
     colors = {}
 }
 
+-- Definição das cores base
 M.colors.black = hsl("#000000")
-M.colors.gray_01 = hsl("#626262")
-M.colors.gray_02 = M.colors.gray_01.li(4)
-M.colors.gray_03 = M.colors.gray_01.li(8)
-M.colors.gray_04 = M.colors.gray_01.li(16)
-M.colors.red_01 = hsl("#3d060c")
-M.colors.red_02 = M.colors.red_01.li(4)
-M.colors.red_03 = M.colors.red_01.li(8)
-M.colors.red_04 = M.colors.red_01.li(16)
-M.colors.yellow_01 = hsl("#574703")
-M.colors.yellow_02 = M.colors.yellow_01.li(4)
-M.colors.yellow_03 = M.colors.yellow_01.li(8)
-M.colors.yellow_04 = M.colors.yellow_01.li(16)
-M.colors.blue_01 = hsl("#082536")
-M.colors.blue_02 = M.colors.blue_01.li(4)
-M.colors.blue_03 = M.colors.blue_01.li(8)
-M.colors.blue_04 = M.colors.blue_01.li(16)
-M.colors.green_01 = hsl("#06360e")
-M.colors.green_02 = M.colors.green_01.li(4)
-M.colors.green_03 = M.colors.green_01.li(8)
-M.colors.green_04 = M.colors.green_01.li(16)
+-- M.colors.gray = hsl("#626262")
+M.colors.gray = hsl("#828282")
+M.colors.red = hsl("#3d060c")
+M.colors.yellow = hsl("#574703")
+M.colors.blue = hsl("#082536")
+M.colors.green = hsl("#06360e")
 
 M.theme = lush(function(injected_functions)
     local sym = injected_functions.sym
@@ -36,31 +23,31 @@ M.theme = lush(function(injected_functions)
         ------------
 
         -- Base
-        Normal { fg = M.colors.gray_04, bg = M.colors.black },
-        Comment { fg = M.colors.gray_02 },
-        Delimiter { fg = M.colors.gray_03 },
-        Keyword { fg = M.colors.red_04 },
-        StatusLine { fg = M.colors.gray_04, bg = M.colors.black.li(2) },
-        DiagnosticInfo { fg = M.colors.blue_04 },
-        DiagnosticWarn { fg = M.colors.yellow_04 },
-        DiagnosticError { fg = M.colors.red_04 },
-        DiagnosticHint { fg = M.colors.blue_04 },
-        Added { fg = M.colors.green_04, bg = M.colors.green_01 },
-        Removed { fg = M.colors.red_04, bg = M.colors.red_01 },
-        Changed { fg = M.colors.blue_04, bg = M.colors.blue_01 },
-        Search { fg = M.colors.yellow_04, bg = M.colors.yellow_01 },
+        Normal { fg = M.colors.gray.li(16), bg = M.colors.black },
+        Comment { fg = M.colors.gray.li(4) },
+        Delimiter { fg = M.colors.gray.li(8) },
+        Keyword { fg = M.colors.red.li(32) },
+        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(2) },
+        DiagnosticInfo { fg = M.colors.blue.li(16) },
+        DiagnosticWarn { fg = M.colors.yellow.li(16) },
+        DiagnosticError { fg = M.colors.red.li(32) },
+        DiagnosticHint { fg = M.colors.blue.li(16) },
+        Added { fg = M.colors.green.li(16), bg = M.colors.green },
+        Removed { fg = M.colors.red.li(16), bg = M.colors.red },
+        Changed { fg = M.colors.blue.li(16), bg = M.colors.blue },
+        Search { fg = M.colors.yellow.li(16), bg = M.colors.yellow },
 
         -- Window Decoration
         StatusLineNC { StatusLine, fg = M.colors.black.li(2) },
         WinSeparator { Normal, fg = StatusLine.bg },
         WinBar { fg = StatusLine.fg, bg = M.colors.black },
         WinBarNC { WinBar },
-        FloatBorder { WinSeparator, fg = M.colors.gray_01 },
+        FloatBorder { WinSeparator, fg = M.colors.gray },
 
         -- Window Content
         Visual { bg = M.colors.black.li(10) },
         CursorLine { bg = Normal.bg },
-        CursorLineNr { fg = M.colors.red_03 },
+        CursorLineNr { fg = M.colors.red.li(8) },
         EndOfBuffer { Normal, fg = Normal.bg },
         Directory { Normal },
         NormalFloat { Normal },
@@ -82,10 +69,10 @@ M.theme = lush(function(injected_functions)
         DiagnosticSignWarn { DiagnosticWarn, gui = "NONE" },
         DiagnosticSignError { DiagnosticError, gui = "NONE" },
         DiagnosticSignHint { DiagnosticHint, gui = "NONE" },
-        DiagnosticVirtualTextInfo { DiagnosticInfo, bg = M.colors.blue_01 },
-        DiagnosticVirtualTextWarn { DiagnosticWarn, bg = M.colors.yellow_01 },
-        DiagnosticVirtualTextError { DiagnosticError, bg = M.colors.red_01 },
-        DiagnosticVirtualTextHint { DiagnosticHint, bg = M.colors.blue_01 },
+        DiagnosticVirtualTextInfo { DiagnosticInfo, bg = M.colors.blue },
+        DiagnosticVirtualTextWarn { DiagnosticWarn, bg = M.colors.yellow },
+        DiagnosticVirtualTextError { DiagnosticError, bg = M.colors.red },
+        DiagnosticVirtualTextHint { DiagnosticHint, bg = M.colors.blue },
         DiagnosticUnderlineInfo { sp = DiagnosticInfo.fg, gui = "undercurl" },
         DiagnosticUnderlineWarn { sp = DiagnosticWarn.fg, gui = "undercurl" },
         DiagnosticUnderlineError { sp = DiagnosticError.fg, gui = "undercurl" },
