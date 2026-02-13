@@ -38,10 +38,10 @@ M.theme = lush(function(injected_functions)
 
         -- Window Decoration
         StatusLineNC { StatusLine, fg = M.colors.black.li(2) },
-        WinSeparator { Normal, fg = M.colors.gray },
+        WinSeparator { Normal, fg = StatusLine.bg },
         WinBar { bg = StatusLine.bg },
         WinBarNC { WinBar },
-        FloatBorder { WinSeparator },
+        FloatBorder { WinSeparator, fg = M.colors.gray },
 
         -- Window Content
         Visual { bg = M.colors.black.li(10) },
