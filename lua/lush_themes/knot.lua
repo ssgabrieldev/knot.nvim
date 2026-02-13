@@ -40,7 +40,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray_02 },
         Delimiter { fg = M.colors.gray_03 },
         Keyword { fg = M.colors.red_04 },
-        StatusLine { fg = M.colors.gray_04, bg = M.colors.black.li(8) },
+        StatusLine { fg = M.colors.gray_04, bg = M.colors.black.li(2) },
         DiagnosticInfo { fg = M.colors.blue_04 },
         DiagnosticWarn { fg = M.colors.yellow_04 },
         DiagnosticError { fg = M.colors.red_04 },
@@ -51,7 +51,7 @@ M.theme = lush(function(injected_functions)
         Search { fg = M.colors.yellow_04, bg = M.colors.yellow_01 },
 
         -- Window Decoration
-        StatusLineNC { StatusLine, fg = M.colors.gray_01 },
+        StatusLineNC { StatusLine, fg = M.colors.black.li(2) },
         WinSeparator { Normal, fg = StatusLine.bg },
         WinBar { fg = StatusLine.fg, bg = M.colors.black },
         WinBarNC { WinBar },
@@ -118,7 +118,7 @@ M.theme = lush(function(injected_functions)
         PmenuSel { bg = M.colors.black.li(4), gui = "NONE" },
 
         -- NvimTree
-        NvimTreeNormal { bg = M.colors.black.li(2) },
+        NvimTreeNormal { bg = StatusLine.bg },
         NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
         NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
