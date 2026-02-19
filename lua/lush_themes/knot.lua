@@ -91,6 +91,7 @@ M.theme = lush(function(injected_functions)
         sym("@number") { Delimiter },
         sym("@boolean") { Delimiter },
         sym("@lsp.type.property") { fg = Normal.fg },
+        sym("@markup.raw.block.markdown") { gui="bold" },
 
         -------------
         -- Plugins --
