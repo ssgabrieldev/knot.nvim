@@ -123,6 +123,14 @@ M.theme = lush(function(injected_functions)
         BufferLineWarning { bg = WinBar.bg },
         BufferLineInfo { bg = WinBar.bg },
         BufferLineModified { bg = WinBar.bg },
+
+        -- MarkView
+        MarkViewCode { bg = M.colors.black.li(2) },
+        MarkviewHeading1 { bg = M.colors.black, fg = Keyword.fg },
+        MarkviewHeading2 { bg = M.colors.black, fg = Keyword.fg },
+        MarkviewHeading3 { bg = M.colors.black, fg = Keyword.fg },
+        MarkviewHeading4 { bg = M.colors.black, fg = Keyword.fg },
+        MarkviewHeading5 { bg = M.colors.black, fg = Keyword.fg }
     }
 end)
 
