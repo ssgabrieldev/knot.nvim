@@ -26,7 +26,7 @@ M.theme = lush(function(injected_functions)
         Comment { fg = M.colors.gray.li(4) },
         Delimiter { fg = M.colors.gray.li(8) },
         Keyword { fg = M.colors.red.li(32) },
-        StatusLine { fg = M.colors.gray.li(16), bg = M.colors.black.li(2) },
+        StatusLine { Normal },
         DiagnosticInfo { fg = M.colors.blue.li(32) },
         DiagnosticWarn { fg = M.colors.yellow.li(32) },
         DiagnosticError { fg = M.colors.red.li(32) },
@@ -37,9 +37,9 @@ M.theme = lush(function(injected_functions)
         Search { fg = M.colors.yellow.li(32), bg = M.colors.yellow },
 
         -- Window Decoration
-        StatusLineNC { StatusLine, fg = M.colors.black.li(2) },
-        WinSeparator { Normal, fg = StatusLine.bg },
-        WinBar { bg = StatusLine.bg },
+        StatusLineNC { StatusLine, fg = Normal.bg.da(2) },
+        WinSeparator { Normal, fg = M.colors.black.li(4) },
+        WinBar { bg = Normal.bg },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator, fg = M.colors.gray },
 
@@ -91,7 +91,7 @@ M.theme = lush(function(injected_functions)
         sym("@number") { Delimiter },
         sym("@boolean") { Delimiter },
         sym("@lsp.type.property") { fg = Normal.fg },
-        sym("@markup.raw.block.markdown") { gui="bold" },
+        sym("@markup.raw.block.markdown") { gui = "bold" },
 
         -------------
         -- Plugins --
@@ -110,8 +110,8 @@ M.theme = lush(function(injected_functions)
         NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
         -- Dap View
-        TabLine { NvimTreeNormal },
-        NvimDapViewTabSelected { bg = NvimTreeNormal.bg, gui = "bold" },
+        TabLine { WinBar },
+        NvimDapViewTabSelected { bg = WinSeparator.fg, gui = "bold" },
 
         -- Buffer Line
         BufferLineFill { bg = WinBar.bg },
@@ -123,6 +123,17 @@ M.theme = lush(function(injected_functions)
         BufferLineWarning { bg = WinBar.bg },
         BufferLineInfo { bg = WinBar.bg },
         BufferLineModified { bg = WinBar.bg },
+        BufferLinePick { bg = WinBar.bg, fg = Keyword.fg },
+        BufferLineHintSelected { bg = WinSeparator.fg },
+        BufferLineErrorSelected { bg = WinSeparator.fg },
+        BufferLineWarningSelected { bg = WinSeparator.fg },
+        BufferLineInfoSelected { bg = WinSeparator.fg },
+        BufferLineModifiedSelected { bg = WinSeparator.fg },
+        BufferLineBufferSelected { bg = WinSeparator.fg },
+        BufferLineCloseButtonSelected { bg = WinSeparator.fg },
+        BufferLineDevIconDefaultSelected { bg = WinSeparator.fg },
+        BufferLinePickSelected { bg = WinSeparator.fg, fg = Keyword.fg },
+
 
         -- MarkView
         MarkViewCode { bg = M.colors.black.li(2) },
@@ -130,7 +141,10 @@ M.theme = lush(function(injected_functions)
         MarkviewHeading2 { bg = M.colors.black, fg = Keyword.fg },
         MarkviewHeading3 { bg = M.colors.black, fg = Keyword.fg },
         MarkviewHeading4 { bg = M.colors.black, fg = Keyword.fg },
-        MarkviewHeading5 { bg = M.colors.black, fg = Keyword.fg }
+        MarkviewHeading5 { bg = M.colors.black, fg = Keyword.fg },
+
+        -- ToggleTerm
+        -- WinBarActive { bg = WinSeparator.fg }
     }
 end)
 
