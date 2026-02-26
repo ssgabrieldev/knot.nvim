@@ -38,7 +38,7 @@ M.theme = lush(function(injected_functions)
 
         -- Window Decoration
         StatusLineNC { StatusLine, fg = Normal.bg.da(2) },
-        WinSeparator { Normal, fg = M.colors.black.li(4) },
+        WinSeparator { Normal, fg = M.colors.black.li(12) },
         WinBar { bg = Normal.bg },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator, fg = M.colors.gray },
@@ -118,21 +118,22 @@ M.theme = lush(function(injected_functions)
         BufferLineBackground { bg = WinBar.bg },
         BufferLineSeparator { bg = WinBar.bg, fg = Normal.bg },
         BufferLineOffsetSeparator { WinSeparator },
-        BufferLineHint { bg = WinBar.bg },
-        BufferLineError { bg = WinBar.bg },
-        BufferLineWarning { bg = WinBar.bg },
-        BufferLineInfo { bg = WinBar.bg },
+        BufferLineHint { DiagnosticHint, bg = WinBar.bg },
+        BufferLineError { DiagnosticError, bg = WinBar.bg },
+        BufferLineWarning { DiagnosticWarn, bg = WinBar.bg },
+        BufferLineInfo { DiagnosticInfo, bg = WinBar.bg },
         BufferLineModified { bg = WinBar.bg },
         BufferLinePick { bg = WinBar.bg, fg = Keyword.fg },
-        BufferLineHintSelected { bg = WinSeparator.fg },
-        BufferLineErrorSelected { bg = WinSeparator.fg },
-        BufferLineWarningSelected { bg = WinSeparator.fg },
-        BufferLineInfoSelected { bg = WinSeparator.fg },
-        BufferLineModifiedSelected { bg = WinSeparator.fg },
-        BufferLineBufferSelected { bg = WinSeparator.fg },
-        BufferLineCloseButtonSelected { bg = WinSeparator.fg },
-        BufferLineDevIconDefaultSelected { bg = WinSeparator.fg },
-        BufferLinePickSelected { bg = WinSeparator.fg, fg = Keyword.fg },
+        BufferLineHintSelected { DiagnosticHint, bg = WinSeparator.fg, gui = "bold" },
+        BufferLineErrorSelected { DiagnosticError, bg = WinSeparator.fg, gui = "bold" },
+        BufferLineWarningSelected { DiagnosticWarn, bg = WinSeparator.fg, gui = "bold" },
+        BufferLineInfoSelected { DiagnosticInfo, bg = WinSeparator.fg, gui = "bold" },
+        BufferLineModifiedSelected { bg = WinSeparator.fg, gui = "bold" },
+        BufferLineIndicatorSelected { bg = WinSeparator.fg, gui = "bold" },
+        BufferLineBufferSelected { bg = WinSeparator.fg, gui = "bold" },
+        BufferLineCloseButtonSelected { bg = WinSeparator.fg, gui = "bold" },
+        BufferLineDevIconDefaultSelected { bg = WinSeparator.fg, gui = "bold" },
+        BufferLinePickSelected { bg = WinSeparator.fg, fg = Keyword.fg, gui = "bold" },
 
 
         -- MarkView
@@ -144,7 +145,7 @@ M.theme = lush(function(injected_functions)
         MarkviewHeading5 { bg = M.colors.black, fg = Keyword.fg },
 
         -- ToggleTerm
-        -- WinBarActive { bg = WinSeparator.fg }
+        WinBarActive { bg = WinSeparator.fg }
     }
 end)
 
