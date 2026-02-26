@@ -38,7 +38,7 @@ M.theme = lush(function(injected_functions)
 
         -- Window Decoration
         StatusLineNC { StatusLine, fg = Normal.bg.da(2) },
-        WinSeparator { Normal, fg = M.colors.black.li(12) },
+        WinSeparator { Normal, fg = M.colors.black.li(2) },
         WinBar { bg = Normal.bg },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator, fg = M.colors.gray },
