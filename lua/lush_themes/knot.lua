@@ -37,9 +37,9 @@ M.theme = lush(function(injected_functions)
         Search { fg = M.colors.yellow.li(32), bg = M.colors.yellow },
 
         -- Window Decoration
-        StatusLineNC { StatusLine, fg = Normal.bg.da(2) },
+        StatusLineNC { StatusLine, fg = Normal.fg.da(50) },
         WinSeparator { Normal, fg = M.colors.black.li(8) },
-        WinBar { bg = Normal.bg },
+        WinBar { bg = Normal.bg.li(8) },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator, fg = M.colors.gray },
 
@@ -109,32 +109,42 @@ M.theme = lush(function(injected_functions)
         NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
         NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
-        -- Dap View
-        TabLine { WinBar },
-        NvimDapViewTabSelected { bg = WinSeparator.fg, gui = "bold" },
-
         -- Buffer Line
-        BufferLineFill { bg = WinBar.bg },
-        BufferLineBackground { bg = WinBar.bg },
-        BufferLineSeparator { bg = WinBar.bg, fg = Normal.bg },
-        BufferLineOffsetSeparator { WinSeparator },
-        BufferLineHint { DiagnosticHint, bg = WinBar.bg },
-        BufferLineError { DiagnosticError, bg = WinBar.bg },
-        BufferLineWarning { DiagnosticWarn, bg = WinBar.bg },
-        BufferLineInfo { DiagnosticInfo, bg = WinBar.bg },
-        BufferLineModified { bg = WinBar.bg },
-        BufferLinePick { bg = WinBar.bg, fg = Keyword.fg },
-        BufferLineHintSelected { DiagnosticHint, bg = WinSeparator.fg, gui = "bold" },
-        BufferLineErrorSelected { DiagnosticError, bg = WinSeparator.fg, gui = "bold" },
-        BufferLineWarningSelected { DiagnosticWarn, bg = WinSeparator.fg, gui = "bold" },
-        BufferLineInfoSelected { DiagnosticInfo, bg = WinSeparator.fg, gui = "bold" },
-        BufferLineModifiedSelected { bg = WinSeparator.fg, gui = "bold" },
-        BufferLineIndicatorSelected { bg = WinSeparator.fg, gui = "bold" },
-        BufferLineBufferSelected { bg = WinSeparator.fg, gui = "bold" },
-        BufferLineCloseButtonSelected { bg = WinSeparator.fg, gui = "bold" },
-        BufferLineDevIconDefaultSelected { bg = WinSeparator.fg, gui = "bold" },
-        BufferLinePickSelected { bg = WinSeparator.fg, fg = Keyword.fg, gui = "bold" },
+        WinBarInactive { bg = WinBar.bg },
+        WinBarActive { bg = WinBar.bg.li(4) },
 
+        BufferLineBackground { bg = WinBarInactive.bg, fg = Normal.fg, },
+        BufferLineFill { bg = Normal.bg },
+        BufferLineOffsetSeparator { WinSeparator },
+        BufferLineBufferVisible { bg = WinBar.bg },
+        BufferLineIndicatorVisible { bg = WinBar.bg },
+        BufferLineDevIconDefault { bg = WinBar.bg },
+        BufferLineSeparator { bg = BufferLineBackground.bg, fg = Normal.bg },
+        BufferLineHint { DiagnosticHint, bg = BufferLineBackground.bg },
+        BufferLineError { DiagnosticError, bg = BufferLineBackground.bg },
+        BufferLineWarning { DiagnosticWarn, bg = BufferLineBackground.bg },
+        BufferLineInfo { DiagnosticInfo, bg = BufferLineBackground.bg },
+        BufferLineModified { bg = BufferLineBackground.bg },
+        BufferLinePick { bg = BufferLineBackground.bg, fg = Keyword.fg },
+        BufferLineBufferSelected { bg = WinBarActive.bg, fg = Normal.fg, gui = "bold" },
+        BufferLineHintSelected { DiagnosticHint, bg = BufferLineBufferSelected.bg, gui = "bold" },
+        BufferLineErrorSelected { DiagnosticError, bg = BufferLineBufferSelected.bg, gui = "bold" },
+        BufferLineWarningSelected { DiagnosticWarn, bg = BufferLineBufferSelected.bg, gui = "bold" },
+        BufferLineInfoSelected { DiagnosticInfo, bg = BufferLineBufferSelected.bg, gui = "bold" },
+        BufferLineModifiedSelected { BufferLineBufferSelected },
+        BufferLineIndicatorSelected { BufferLineBufferSelected },
+        BufferLineCloseButtonSelected { BufferLineBufferSelected },
+        BufferLineDevIconDefaultSelected { BufferLineBufferSelected },
+        BufferLinePickSelected { bg = BufferLineBufferSelected.bg, fg = Keyword.fg, gui = "bold" },
+
+        -- Dap View
+        NvimDapViewTab { BufferLineBackground },
+        NvimDapViewTabFill { Normal },
+        NvimDapViewControlNC { NvimDapViewTabFill },
+        NvimDapViewControlPause { NvimDapViewControlNC, fg = Keyword.fg },
+        NvimDapViewControlPlay { NvimDapViewControlPause },
+        NvimDapViewControlRunLast { NvimDapViewControlPause },
+        NvimDapViewTabSelected { BufferLineBufferSelected },
 
         -- MarkView
         MarkViewCode { bg = M.colors.black.li(2) },
@@ -143,9 +153,6 @@ M.theme = lush(function(injected_functions)
         MarkviewHeading3 { bg = M.colors.black, fg = Keyword.fg },
         MarkviewHeading4 { bg = M.colors.black, fg = Keyword.fg },
         MarkviewHeading5 { bg = M.colors.black, fg = Keyword.fg },
-
-        -- ToggleTerm
-        WinBarActive { bg = WinSeparator.fg }
     }
 end)
 
