@@ -113,9 +113,8 @@ M.theme = lush(function(injected_functions)
         WinBarInactive { bg = WinBar.bg },
         WinBarActive { bg = WinBar.bg.li(4) },
         BufferLineOffsetSeparator { WinSeparator },
-        -- BufferLineDevIconDefault { BufferLineBackground },
         -- Buffer
-        BufferLineBackground { bg = WinBarInactive.bg, fg = Normal.fg, },
+        BufferLineBackground { bg = WinBarInactive.bg },
         BufferLineDuplicate { BufferLineBackground },
         BufferLineFill { BufferLineBackground },
         BufferLineModified { BufferLineBackground },
@@ -125,12 +124,14 @@ M.theme = lush(function(injected_functions)
         BufferLineError { DiagnosticError, bg = BufferLineBackground.bg },
         BufferLineWarning { DiagnosticWarn, bg = BufferLineBackground.bg },
         BufferLineInfo { DiagnosticInfo, bg = BufferLineBackground.bg },
+        BufferLineDevIconDefault { BufferLineBackground },
         -- Visible
-        BufferLineBufferVisible { bg = WinBarActive.bg },
+        BufferLineBufferVisible { bg = WinBarActive.bg, fg = Normal.fg },
         BufferLineDuplicateVisible { BufferLineBufferVisible },
         BufferLineIndicatorVisible { BufferLineBufferVisible },
         BufferLineCloseButtonVisible { BufferLineBufferVisible },
         BufferLineModifiedVisible { BufferLineBufferVisible },
+        BufferLineDevIconDefaultVisible { BufferLineBufferVisible },
         BufferLineHintVisible { DiagnosticHint, bg = BufferLineBufferVisible.bg },
         BufferLineErrorVisible { DiagnosticError, bg = BufferLineBufferVisible.bg },
         BufferLineWarningVisible { DiagnosticWarn, bg = BufferLineBufferVisible.bg },
@@ -148,6 +149,9 @@ M.theme = lush(function(injected_functions)
         BufferLineErrorSelected { BufferLineBufferSelected, fg = DiagnosticError.fg },
         BufferLineWarningSelected { BufferLineBufferSelected, fg = DiagnosticWarn.fg },
         BufferLineInfoSelected { BufferLineBufferSelected, fg = DiagnosticInfo.fg },
+        -- Inactive
+        BufferLineDevIconDefaultInactive { BufferLineBufferSelected },
+
 
         -- Dap View
         NvimDapViewTab { BufferLineBackground },
