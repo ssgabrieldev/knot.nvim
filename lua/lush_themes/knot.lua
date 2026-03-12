@@ -39,7 +39,7 @@ M.theme = lush(function(injected_functions)
         -- Window Decoration
         StatusLineNC { StatusLine, fg = Normal.fg.da(50) },
         WinSeparator { Normal, fg = M.colors.black.li(8) },
-        WinBar { bg = Normal.bg.li(8) },
+        WinBar { bg = Normal.bg.li(8), gui="NONE" },
         WinBarNC { WinBar },
         FloatBorder { WinSeparator, fg = M.colors.gray },
 
@@ -126,7 +126,7 @@ M.theme = lush(function(injected_functions)
         BufferLineInfo { DiagnosticInfo, bg = BufferLineBackground.bg },
         BufferLineDevIconDefault { BufferLineBackground },
         -- Visible
-        BufferLineBufferVisible { bg = WinBarActive.bg, fg = Normal.fg },
+        BufferLineBufferVisible { bg = WinBarInactive.bg, fg = Comment.fg, gui="NONE" },
         BufferLineDuplicateVisible { BufferLineBufferVisible },
         BufferLineIndicatorVisible { BufferLineBufferVisible },
         BufferLineCloseButtonVisible { BufferLineBufferVisible },
@@ -169,6 +169,10 @@ M.theme = lush(function(injected_functions)
         MarkviewHeading3 { bg = M.colors.black, fg = Keyword.fg },
         MarkviewHeading4 { bg = M.colors.black, fg = Keyword.fg },
         MarkviewHeading5 { bg = M.colors.black, fg = Keyword.fg },
+
+        -- Edgy
+        EdgyWinBar { WinBar },
+        EdgyWinBarNC { WinBarNC }
     }
 end)
 
