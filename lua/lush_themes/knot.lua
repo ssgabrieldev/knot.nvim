@@ -126,7 +126,7 @@ M.theme = lush(function(injected_functions)
         BufferLineWarning { DiagnosticWarn, bg = BufferLineBackground.bg },
         BufferLineInfo { DiagnosticInfo, bg = BufferLineBackground.bg },
         -- Visible
-        BufferLineBufferVisible { bg = WinBarInactive.bg },
+        BufferLineBufferVisible { bg = WinBarActive.bg },
         BufferLineDuplicateVisible { BufferLineBufferVisible },
         BufferLineIndicatorVisible { BufferLineBufferVisible },
         BufferLineCloseButtonVisible { BufferLineBufferVisible },
