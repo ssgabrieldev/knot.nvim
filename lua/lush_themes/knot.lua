@@ -40,10 +40,10 @@ M.theme = lush(function(injected_functions)
         StatusLineNC { StatusLine, fg = Normal.fg.da(50) },
         WinSeparator { Normal, fg = M.colors.black.li(8) },
         FloatBorder { WinSeparator, fg = M.colors.gray },
-        WinBar { bg = Normal.bg.li(4), gui="NONE" },
+        WinBar { bg = Normal.bg.li(8), gui="NONE" },
         WinBarNC { WinBar },
-        WinBarActive { bg = WinBar.bg.li(4) },
-        WinBarInactive { bg = WinBar.bg },
+        WinBarActive { bg = WinBar.bg },
+        WinBarInactive { bg = Normal.bg },
 
         -- Window Content
         Visual { bg = M.colors.black.li(10) },
@@ -126,12 +126,12 @@ M.theme = lush(function(injected_functions)
         BufferLineInfo { DiagnosticInfo, bg = BufferLineBackground.bg },
         BufferLineDevIconDefault { BufferLineBackground },
         -- Visible
-        BufferLineBufferVisible { bg = WinBarInactive.bg, fg = Comment.fg, gui="NONE" },
+        BufferLineBufferVisible { bg = WinBarActive.bg, fg = Comment.fg, gui="NONE" },
         BufferLineDuplicateVisible { BufferLineBufferVisible },
         BufferLineIndicatorVisible { BufferLineBufferVisible },
         BufferLineCloseButtonVisible { BufferLineBufferVisible },
         BufferLineModifiedVisible { BufferLineBufferVisible },
-        BufferLineDevIconDefaultVisible { BufferLineBufferVisible },
+        BufferLineDevIconDefaultVisible { bg = BufferLineBufferVisible.bg },
         BufferLineHintVisible { DiagnosticHint, bg = BufferLineBufferVisible.bg },
         BufferLineErrorVisible { DiagnosticError, bg = BufferLineBufferVisible.bg },
         BufferLineWarningVisible { DiagnosticWarn, bg = BufferLineBufferVisible.bg },
