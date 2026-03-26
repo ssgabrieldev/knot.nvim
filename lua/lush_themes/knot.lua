@@ -26,7 +26,7 @@ M.theme = lush(function(injected_functions)
     Comment { fg = M.colors.gray.li(4) },
     Delimiter { fg = M.colors.gray.li(8) },
     Keyword { fg = M.colors.red.li(32) },
-    StatusLine { bg = M.colors.black.li(4) },
+    StatusLine { bg = M.colors.black.li(4), fg = Normal.fg },
     DiagnosticInfo { fg = M.colors.blue.li(32) },
     DiagnosticWarn { fg = M.colors.yellow.li(32) },
     DiagnosticError { fg = M.colors.red.li(32) },
