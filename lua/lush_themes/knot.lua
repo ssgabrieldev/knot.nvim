@@ -47,7 +47,7 @@ M.theme = lush(function(injected_functions)
 
     -- Window Content
     Visual { bg = M.colors.black.li(10) },
-    CursorLine { bg = Normal.bg },
+    CursorLine { bg = "NONE" },
     CursorLineNr { fg = Keyword.fg },
     EndOfBuffer { Normal, fg = Normal.bg },
     Directory { Normal },
@@ -107,7 +107,7 @@ M.theme = lush(function(injected_functions)
     PmenuSel { bg = M.colors.black.li(4), gui = "NONE" },
 
     -- NvimTree
-    NvimTreeNormal { bg = M.colors.black.li(4), fg = Normal.fg },
+    NvimTreeNormal { bg = M.colors.black.li(2), fg = Normal.fg },
     NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
     NvimTreeCursorLine { bg = NvimTreeNormal.bg },
 
