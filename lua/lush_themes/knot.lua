@@ -171,7 +171,8 @@ M.theme = lush(function(injected_functions)
 
     -- Edgy
     EdgyWinBar { WinBar },
-    EdgyWinBarNC { WinBarNC }
+    EdgyWinBarNC { WinBarNC },
+    EdgyNormal { NvimTreeNormal }
   }
 end)
 
