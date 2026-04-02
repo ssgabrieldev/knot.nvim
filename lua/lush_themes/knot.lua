@@ -36,22 +36,13 @@ M.theme = lush(function(injected_functions)
     Changed { fg = M.colors.blue.li(32), bg = M.colors.blue },
     Search { fg = M.colors.yellow.li(32), bg = M.colors.yellow },
 
-    -- Window Decoration
-    StatusLineNC { StatusLine, fg = Normal.fg.da(50) },
-    WinSeparator { Normal, fg = M.colors.black.li(4) },
-    FloatBorder { WinSeparator, fg = M.colors.gray },
-    WinBar { bg = Normal.bg.li(8), gui = "NONE" },
-    WinBarNC { WinBar },
-    WinBarActive { bg = WinBar.bg },
-    WinBarInactive { bg = Normal.bg.li(4) },
-
     -- Window Content
     Visual { bg = M.colors.black.li(10) },
     CursorLine { bg = "NONE" },
     CursorLineNr { fg = Keyword.fg },
     EndOfBuffer { Normal, fg = Normal.bg },
     Directory { Normal },
-    NormalFloat { Normal },
+    NormalFloat { bg = M.colors.black.li(2), fg = Normal.fg },
     String { Keyword },
     Function { Keyword },
     Statement { Keyword },
@@ -94,6 +85,16 @@ M.theme = lush(function(injected_functions)
     sym("@boolean") { Delimiter },
     sym("@lsp.type.property") { fg = Normal.fg },
     sym("@markup.raw.block.markdown") { gui = "bold" },
+
+    -- Window Decoration
+    StatusLineNC { StatusLine, fg = Normal.fg.da(50) },
+    WinSeparator { Normal, fg = M.colors.black.li(4) },
+    FloatBorder { NormalFloat, fg = M.colors.gray },
+    WinBar { bg = Normal.bg.li(8), gui = "NONE" },
+    WinBarNC { WinBar },
+    WinBarActive { bg = WinBar.bg },
+    WinBarInactive { bg = Normal.bg.li(4) },
+
 
     -------------
     -- Plugins --
