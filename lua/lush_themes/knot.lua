@@ -103,6 +103,7 @@ M.theme = lush(function(injected_functions)
     -- Telescope
     TelescopeNormal { NormalFloat },
     TelescopeBorder { FloatBorder },
+    TelescopeTitle { bg = Keyword.fg, fg = Normal.bg },
 
     -- CMP
     PmenuSel { bg = M.colors.black.li(4), gui = "NONE" },
