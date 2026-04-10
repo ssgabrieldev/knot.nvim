@@ -89,30 +89,21 @@ M.theme = lush(function(injected_functions)
     -- Window Decoration
     StatusLineNC { StatusLine, fg = Normal.fg.da(50) },
     WinSeparator { bg = Normal.bg, fg = M.colors.black.li(4) },
-    FloatBorder { bg = NormalFloat.bg, fg = M.colors.black.li(4) },
+    FloatBorder { bg = NormalFloat.bg, fg = M.colors.black },
     WinBar { bg = Normal.bg.li(8), gui = "NONE" },
     WinBarNC { WinBar },
     WinBarActive { bg = WinBar.bg },
     WinBarInactive { bg = Normal.bg.li(4) },
-
-
-    -------------
-    -- Plugins --
-    -------------
-
     -- Telescope
     TelescopeNormal { NormalFloat },
     TelescopeBorder { FloatBorder },
     TelescopeTitle { bg = Keyword.fg, fg = Normal.bg },
-
     -- CMP
     PmenuSel { bg = M.colors.black.li(4), gui = "NONE" },
-
     -- NvimTree
-    NvimTreeNormal { bg = M.colors.black.li(2), fg = Normal.fg },
+    NvimTreeNormal { bg = Normal.bg, fg = Normal.fg },
     NvimTreeEndOfBuffer { bg = NvimTreeNormal.bg, fg = NvimTreeNormal.bg },
     NvimTreeCursorLine { bg = NvimTreeNormal.bg },
-
     -- Buffer Line
     BufferLineOffsetSeparator { WinSeparator },
     -- Buffer
@@ -153,7 +144,6 @@ M.theme = lush(function(injected_functions)
     BufferLineInfoSelected { BufferLineBufferSelected, fg = DiagnosticInfo.fg },
     -- Inactive
     BufferLineDevIconDefaultInactive { BufferLineBufferSelected },
-
     -- Dap View
     NvimDapViewTab { BufferLineBackground },
     NvimDapViewTabSelected { BufferLineBufferSelected },
@@ -162,7 +152,6 @@ M.theme = lush(function(injected_functions)
     NvimDapViewControlPause { NvimDapViewControlNC, fg = Keyword.fg },
     NvimDapViewControlPlay { NvimDapViewControlPause },
     NvimDapViewControlRunLast { NvimDapViewControlPause },
-
     -- MarkView
     MarkViewCode { bg = M.colors.black.li(2) },
     MarkviewHeading1 { bg = M.colors.black, fg = Keyword.fg },
@@ -170,7 +159,6 @@ M.theme = lush(function(injected_functions)
     MarkviewHeading3 { bg = M.colors.black, fg = Keyword.fg },
     MarkviewHeading4 { bg = M.colors.black, fg = Keyword.fg },
     MarkviewHeading5 { bg = M.colors.black, fg = Keyword.fg },
-
     -- Edgy
     EdgyWinBar { WinBar },
     EdgyWinBarNC { WinBarNC },
